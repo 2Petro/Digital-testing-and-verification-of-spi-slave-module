@@ -37,7 +37,29 @@ The verification environment checks for:
 
 ---
 
+## Usage
+
+```bash
+# 1. Compile RTL and verification environment using Synopsys VCS
+vcs -sverilog -ntb_opts dtm -cm line+cond+fsm+tgl \
+Slaveip_Top.sv \
+Slaveip-RTLdesign.v \
+Slaveip_Test.sv \
+Slaveip_Interface.sv \
+Slaveip_Class.sv \
+Slaveip_Coverage.sv
+
+# 2. Run simulation and collect coverage
+./simv -cm line+cond+fsm+tgl
+
+# 3. Generate coverage report
+urg -dir simv.vdb
+
+# 4. Open coverage results using Verdi
+verdi -cov -covdir simv.vdb &
 ## Simulation Results
+
+---
 
 ![SPI Test 1](output/waveform_1.png)
 ![SPI Test 2](output/waveform_2.png)
