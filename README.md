@@ -57,10 +57,10 @@ urg -dir simv.vdb
 
 # 4. Open coverage results using Verdi
 verdi -cov -covdir simv.vdb &
-## Simulation Results
 ```
 ---
 
+## Simulation Results
 ![SPI Test 1](output/waveform_1.png)
 ![SPI Test 2](output/waveform_2.png)
 ![SPI Test 3](output/waveform_3.png)
